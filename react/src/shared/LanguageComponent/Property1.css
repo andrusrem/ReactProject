@@ -1,0 +1,24 @@
+.language-component-property-1-default,
+.language-component-property-1-default * {
+  box-sizing: border-box;
+}
+.language-component-property-1-default {
+  width: 45px;
+  height: 39px;
+  position: relative;
+}
+.language-component-property-1-default .en {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-ExtraLight", sans-serif;
+  font-size: 25px;
+  font-weight: 200;
+  text-decoration: underline;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  width: 100%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+}

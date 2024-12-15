@@ -1,0 +1,119 @@
+.menu-header-desktop,
+.menu-header-desktop * {
+  box-sizing: border-box;
+}
+.menu-header-desktop {
+  background: rgba(251, 250, 241, 0);
+  height: 188px;
+  position: relative;
+}
+.menu-header-desktop .menu {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-ExtraLight", sans-serif;
+  font-size: 25px;
+  font-weight: 200;
+  position: absolute;
+  right: 83.44%;
+  left: 9.38%;
+  width: 7.19%;
+  bottom: 40.96%;
+  top: 41.49%;
+  height: 17.55%;
+}
+.menu-header-desktop .language-component-instance {
+  width: 3.52% !important;
+  height: 20.74% !important;
+  position: absolute !important;
+  right: 31.56% !important;
+  left: 64.92% !important;
+  bottom: 37.77% !important;
+  top: 41.49% !important;
+}
+.menu-header-desktop .booking-button-instance {
+  width: 20.23% !important;
+  height: 42.02% !important;
+  position: absolute !important;
+  right: 9.38% !important;
+  left: 70.39% !important;
+  bottom: 29.26% !important;
+  top: 28.72% !important;
+}
+.menu-header-desktop .component-1-instance {
+  width: 12.58% !important;
+  height: 21.81% !important;
+  position: absolute !important;
+  right: 43.75% !important;
+  left: 43.67% !important;
+  bottom: 37.77% !important;
+  top: 40.43% !important;
+}
+/* variant styles */
+.menu-header-desktop.property-1-variant-3 .close-menu-component-instance {
+  width: 1.95% !important;
+  height: 13.3% !important;
+  position: absolute !important;
+  right: 86.25% !important;
+  left: 11.8% !important;
+  bottom: 65.43% !important;
+  top: 21.28% !important;
+}
+.menu-header-desktop.property-1-variant-3 .link-button-instance {
+  width: 9.22% !important;
+  height: 24.47% !important;
+  position: absolute !important;
+  right: 81.41% !important;
+  left: 9.38% !important;
+  bottom: 15.96% !important;
+  top: 59.57% !important;
+}
+.menu-header-desktop.property-1-variant-3 .link-button-instance2 {
+  width: 11.56% !important;
+  height: 24.47% !important;
+  position: absolute !important;
+  right: 69.84% !important;
+  left: 18.59% !important;
+  bottom: 15.96% !important;
+  top: 59.57% !important;
+}
+.menu-header-desktop.property-1-variant-3 .link-button-instance3 {
+  width: 11.56% !important;
+  height: 24.47% !important;
+  position: absolute !important;
+  right: 41.33% !important;
+  left: 47.11% !important;
+  bottom: 15.96% !important;
+  top: 59.57% !important;
+}
+.menu-header-desktop.property-1-variant-3 .link-button-instance4 {
+  width: 16.8% !important;
+  height: 24.47% !important;
+  position: absolute !important;
+  right: 53.05% !important;
+  left: 30.16% !important;
+  bottom: 15.96% !important;
+  top: 59.57% !important;
+}
+.menu-header-desktop.property-1-variant-2 .menu {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  bottom: 41.49%;
+  top: 40.96%;
+}
+.menu-header-desktop.property-1-variant-2 .booking-button-instance,
+.menu-header-desktop.property-1-variant-3 .booking-button-instance {
+  bottom: 28.72% !important;
+  top: 29.26% !important;
+}
+.menu-header-desktop.property-1-variant-3 {
+  background: #fbfaf1;
+}
+.menu-header-desktop.property-1-variant-3 .language-component-instance {
+  right: 31.17% !important;
+  left: 65.31% !important;
+}
+.menu-header-desktop.property-1-variant-3 .component-1-instance {
+  bottom: 56.91% !important;
+  top: 21.28% !important;
+}

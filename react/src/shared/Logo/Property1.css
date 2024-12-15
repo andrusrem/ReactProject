@@ -1,0 +1,51 @@
+.component-1-property-1-default,
+.component-1-property-1-default * {
+  box-sizing: border-box;
+}
+.component-1-property-1-default {
+  width: 161px;
+  height: 41px;
+  position: relative;
+}
+.component-1-property-1-default .a {
+  color: #000000;
+  text-align: left;
+  font-family: "PlayfairDisplay-Regular", sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  position: absolute;
+  right: 60.25%;
+  left: 22.98%;
+  width: 16.77%;
+  bottom: -9.76%;
+  top: -26.83%;
+  height: 136.59%;
+}
+.component-1-property-1-default .ellipse-4 {
+  background: rgba(217, 217, 217, 0);
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #e76a56;
+  border-width: 1px;
+  width: 22.36%;
+  height: 82.93%;
+  position: absolute;
+  right: 77.64%;
+  left: 0%;
+  bottom: 17.07%;
+  top: 0%;
+}
+.component-1-property-1-default ._2 {
+  color: #000000;
+  text-align: left;
+  font-family: "PlayfairDisplay-Regular", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  position: absolute;
+  right: 59.01%;
+  left: 37.89%;
+  width: 3.11%;
+  bottom: 80.49%;
+  top: -12.2%;
+  height: 31.71%;
+}

@@ -1,0 +1,23 @@
+.link-button-property-1-default,
+.link-button-property-1-default * {
+  box-sizing: border-box;
+}
+.link-button-property-1-default {
+  width: 97px;
+  height: 46px;
+  position: relative;
+}
+.link-button-property-1-default .home {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  width: 100%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+}
