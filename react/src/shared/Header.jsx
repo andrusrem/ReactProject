@@ -1,49 +1,91 @@
-import "./Heades.css";
-import { LanguageComponentProperty1Default } from "./LanguageComponent/LanguageComponentProperty1Default.jsx";
-import { BookingButtonProperty1Default } from "./BookingButton/BookingButtonProperty1Default.jsx";
-import { Logo1Property1Default } from "./Logo/Logo1Property1Default.jsx";
-import { CloseMenuComponentProperty1Default } from "./CloseMenuComponent/CloseMenuComponentProperty1Default.jsx";
-import { LinkButtonProperty1Default } from "./LinkButton/LinkButtonProperty1Default.jsx";
+import React, { useState } from "react";
+import "./Header.css"; // Import the CSS file for styling
+import "./Logo.css";
 
-export const Header = ({
-  property1 = "default",
-  className,
-  ...props
-}) => {
-  const variantsClassName = "property-1-" + property1;
+//Translation for header content
+const translations = {
+  en: {
+    menu: "MENU",
+    home: "Home",
+    activities: "Activities",
+    accommodation: "Accommodation",
+    contact: "Contact",
+    book: "Book",
+    language: "EN",
+  },
+  et: {
+    menu: "MENU",
+    home: "Avaleht",
+    activities: "Tegevused",
+    accommodation: "Majutus",
+    contact: "Kontakt",
+    book: "Broneeri",
+    language: "EE",
+  },
+  ru: {
+    menu: "МЕНЮ",
+    home: "Главная",
+    activities: "Досуг",
+    accommodation: "Размещение",
+    contact: "Контакт",
+    book: "Забронировать",
+    language: "RU",
+  },
+};
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [language, setLanguage] = useState("en");
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+  };
 
   return (
-    <div
-      className={"menu-header-desktop " + className + " " + variantsClassName}
-    >
-      {property1 === "variant-3" && (
-        <>
-          <CloseMenuComponentProperty1Default className="close-menu-component-instance"></CloseMenuComponentProperty1Default>
-        </>
+    <header className={`header ${menuOpen ? "menu-open" : ""}`}>
+      <div className="header-top">
+        {/* Menu Button */}
+        <button className="menu-button" onClick={toggleMenu}>
+          <h2>{menuOpen ? "✕" : translations[language].menu}</h2>
+        </button>
+
+        {/* Logo */}
+        <div className="logo-container">
+          <div className="circle"></div>
+          <div className="letter">A<sup>2</sup></div>
+        </div>
+
+        {/* Language Switcher */}
+        <div className="language-switcher">
+          <select
+            value={language}
+            onChange={(e) => handleLanguageChange(e.target.value)}
+          >
+            <option value="en">English</option>
+            <option value="et">Eesti</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+
+        {/* Book Button */}
+        <button className="book-button">{translations[language].book}</button>
+      </div>
+
+      {/* Expanded Menu (when menu is open) */}
+      {menuOpen && (
+        <nav className="nav-menu">
+          <ul>
+            <li>{translations[language].home}</li>
+            <li>{translations[language].activities}</li>
+            <li>{translations[language].accommodation}</li>
+            <li>{translations[language].contact}</li>
+          </ul>
+        </nav>
       )}
-      {(property1 === "default" || property1 === "variant-2") && (
-        <>
-          <div className="menu">MENU </div>
-        </>
-      )}
-      <LanguageComponentProperty1Default className="language-component-instance"></LanguageComponentProperty1Default>
-      {property1 === "variant-3" && (
-        <>
-          <LinkButtonProperty1Default className="link-button-instance"></LinkButtonProperty1Default>
-          <LinkButtonProperty1Default className="link-button-instance2"></LinkButtonProperty1Default>
-          <LinkButtonProperty1Default className="link-button-instance3"></LinkButtonProperty1Default>
-        </>
-      )}
-      <BookingButtonProperty1Default className="booking-button-instance"></BookingButtonProperty1Default>
-      <Logo1Property1Default className="component-1-instance"></Logo1Property1Default>
-      {property1 === "variant-3" && (
-        <>
-          <LinkButtonProperty1Default className="link-button-instance4"></LinkButtonProperty1Default>
-        </>
-      )}
-    </div>
+    </header>
   );
 };
 
- 
-export default Header
+export default Header;
