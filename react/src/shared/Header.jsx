@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Header.css"; // Import the CSS file for styling
 import "./Logo.css";
 
-//Translation for header content
+// Translation for header content
 const translations = {
   en: {
     menu: "MENU",
@@ -32,16 +32,30 @@ const translations = {
     language: "RU",
   },
 };
+
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [language, setLanguage] = useState("en");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
   const handleLanguageChange = (lang) => {
     setLanguage(lang);
+    setDropdownOpen(false);
   };
+
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "et", name: "Eesti" },
+    { code: "ru", name: "Русский" },
+  ];
 
   return (
     <header className={`header ${menuOpen ? "menu-open" : ""}`}>
@@ -57,31 +71,52 @@ const Header = () => {
           <div className="letter">A<sup>2</sup></div>
         </div>
 
-        {/* Language Switcher */}
-        <div className="language-switcher">
-          <select
-            value={language}
-            onChange={(e) => handleLanguageChange(e.target.value)}
-          >
-            <option value="en">English</option>
-            <option value="et">Eesti</option>
-            <option value="ru">Русский</option>
-          </select>
-        </div>
+        {/* Language and Book */}
+        <div className="lang-book">
+          {/* Custom Language Switcher */}
+          <div className="custom-dropdown">
+            <div
+              className="dropdown-header"
+              onClick={toggleDropdown}
+            >
+              {languages.find((lang) => lang.code === language)?.name}
+            </div>
 
-        {/* Book Button */}
-        <button className="book-button">{translations[language].book}</button>
+            {dropdownOpen && (
+              <ul className="dropdown-list">
+                {languages.map((lang) => (
+                  <li
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className={`dropdown-item ${
+                      lang.code === language ? "selected" : ""
+                    }`}
+                  >
+                    {lang.name}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* Book Button */}
+          <button className="book-button">
+            {translations[language].book}
+          </button>
+        </div>
       </div>
 
-      {/* Expanded Menu (when menu is open) */}
+      {/* Expanded Menu */}
       {menuOpen && (
         <nav className="nav-menu">
-          <ul>
-            <li>{translations[language].home}</li>
-            <li>{translations[language].activities}</li>
-            <li>{translations[language].accommodation}</li>
-            <li>{translations[language].contact}</li>
-          </ul>
+          <div className="nav-menu-div">
+            <ul>
+              <li><p>{translations[language].home}</p></li>
+              <li><p>{translations[language].activities}</p></li>
+              <li><p>{translations[language].accommodation}</p></li>
+              <li><p>{translations[language].contact}</p></li>
+            </ul>
+          </div>
         </nav>
       )}
     </header>

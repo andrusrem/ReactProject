@@ -48,7 +48,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: var(--secondary-color);
 }
-
+h2 {
+  font-size: 42px;
+}
 h1 {
   font-size: 3em;
   line-height: 1.1;
@@ -83,6 +85,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  height: 300px;
   width: 100%; /* Full width */
   padding: 1rem 2rem;
   display: flex;
@@ -107,17 +110,6 @@ header .menu-button:hover {
   color: var(--primary-color);
 }
 
-header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-header .logo .sup {
-  font-size: 0.7rem;
-  position: relative;
-  top: -0.5rem;
-}
-
 header .language {
   cursor: pointer;
   font-size: 1rem;
@@ -138,7 +130,7 @@ header .book-button:hover {
   background-color: var(--background-light);
   padding: 1rem 0;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   width: 100%;
 }
 

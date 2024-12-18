@@ -1,9 +1,10 @@
 /* Container for the logo */
 .logo-container {
     display: flex;
+    
     flex-direction:row;
     align-items: center;
-    justify-content: space-between;
+    justify-content:center;
     width: 20%;
     height: 120px;
     position: relative;
@@ -13,8 +14,8 @@
   
   /* Animated Circle */
   .circle {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     border: 2px solid #e74c3c; /* Red stroke */
     border-radius: 50%;
     margin-bottom: 5px;
