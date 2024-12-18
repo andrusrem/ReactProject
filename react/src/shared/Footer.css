@@ -1,4 +1,186 @@
-footer {
+/* Footer Container */
+.footer {
+    background-color: #4a4c3c;
+    /* Dark background */
+    color: #ffffff;
     width: 100%;
-    height: auto;
+    /* Full width */
+    padding: 20px 50px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Sticky Footer */
+.footer.sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.social-icon {
+    font-size: 34px;
+}
+
+.social-icon:hover {
+    font-size: 38px;
+}
+
+.social-icon:active{
+    font-size: 35px;
+}
+
+/* Footer Content */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    /* Space between sections */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* Wrap content for smaller devices */
+    color: #c7c7b8;
+}
+
+/* Sections Styling */
+.footer-section {
+    margin-bottom: 20px;
+    /* Space between sections */
+    flex: 1;
+    /* Equal spacing for each section */
+    min-width: 200px;
+    /* Prevent sections from becoming too narrow */
+}
+.footer-section .navigation {
+    display: flex;
+    align-items: flex-start;
+}
+.footer h3 {
+    font-size: 22px;
+    font-family: "Montserrat", serif;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+}
+
+.footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer p strong {
+    font-family: "Montserrat", serif;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+
+}
+
+.footer li {
+    margin-bottom: 5px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #c7c7b8;
+    font-size: 18px;
+    font-family: "Montserrat", serif;
+    letter-spacing: 1.5px;
+}
+
+.footer a:hover {
+    color: #ff7058;
+}
+
+.navigation {
+    width: auto;
+    margin-left: 15%;
+}
+
+.footer .book-button {
+    background: none;
+    border: 2px solid #ff7058;
+    color: #ff7058;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer .book-button:hover {
+    background-color: #ff7058;
+    color: #ffffff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #c7c7b8;
+    font-size: 0.9rem;
+}
+
+/* Responsive Media Queries */
+
+/* Medium devices: Tablets */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 30px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        /* Stack sections vertically */
+        align-items: center;
+        /* Center-align content */
+    }
+
+    .footer-section {
+        text-align: center;
+        /* Center text for smaller screens */
+        margin-bottom: 15px;
+    }
+
+    .footer .book-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    .navigation{
+        margin-left: 0;
+    }
+}
+
+/* Small devices: Phones */
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        min-width: unset;
+        /* Remove min-width restriction */
+        margin-bottom: 10px;
+    }
+
+    .footer h3 {
+        font-size: 1rem;
+    }
+
+    .footer .book-button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
 }

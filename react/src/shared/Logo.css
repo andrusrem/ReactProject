@@ -11,6 +11,10 @@
     cursor: pointer; /* Add pointer cursor on hover */
     transition: transform 0.3s ease-in-out; /* Smooth transition */
   }
+
+  .footer .logo-container{
+    width: auto;
+  }
   
   /* Animated Circle */
   .circle {
@@ -24,12 +28,16 @@
   
   /* Logo Letter A² */
   .letter {
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Playfair Display", serif;
     font-size: 2rem;
     font-weight: bold;
     color: black;
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .footer .letter {
+    color: #FFFFFF;
   }
   
   /* Hover Effect for Logo Container */

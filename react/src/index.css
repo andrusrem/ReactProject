@@ -13,10 +13,14 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Colors */
-  --primary-color: #ff6a4d; /* Orange for buttons and accents */
-  --secondary-color: #333; /* Dark text */
-  --background-light: #fefaef; /* Light yellow for navigation menu */
-  --hover-color: #ff4c2b; /* Darker hover for buttons */
+  --primary-color: #ff6a4d;
+  /* Orange for buttons and accents */
+  --secondary-color: #333;
+  /* Dark text */
+  --background-light: #fefaef;
+  /* Light yellow for navigation menu */
+  --hover-color: #ff4c2b;
+  /* Darker hover for buttons */
 }
 
 /* Global Reset */
@@ -29,7 +33,8 @@ body {
   min-height: 100vh;
   background-color: var(--background-light);
   color: var(--secondary-color);
-  padding-top: 70px; /* Add space for the fixed header */
+  padding-top: 70px;
+  /* Add space for the fixed header */
 }
 
 a {
@@ -43,14 +48,22 @@ a:hover {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-weight: 600;
   color: var(--secondary-color);
+  font-family: "Montserrat", serif;
 }
+
 h2 {
   font-size: 42px;
 }
+
 h1 {
   font-size: 3em;
   line-height: 1.1;
@@ -74,7 +87,10 @@ button:hover {
   color: white;
   border-color: var(--hover-color);
 }
-
+.book-button:focus,
+.menu-button:focus {
+  outline: none;
+}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -86,7 +102,8 @@ header {
   top: 0;
   left: 0;
   height: 300px;
-  width: 100%; /* Full width */
+  width: 100%;
+  /* Full width */
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -182,6 +199,8 @@ header .book-button:hover {
   button {
     border-color: #7a9fff;
     color: #7a9fff;
+
+    
   }
 
   button:hover {
