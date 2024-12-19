@@ -59,14 +59,12 @@ const Footer = () => {
             <div className="letter">A<sup>2</sup></div>
           </div>
           <div className="navigation-container">
-          <nav className="nav-menu" role="navigation" aria-label="Main navigation">
             <h3>{content[language].navigation}</h3>
             <ul>
               <li><a href="/">{content[language].home}</a></li>
               <li><a href="/activities">{content[language].activities}</a></li>
               <li><a href="/privacy-policy">{content[language].privacyPolicy}</a></li>
             </ul>
-            </nav>
           </div>
 
           {/* Contact Section */}
