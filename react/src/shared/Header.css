@@ -1,5 +1,7 @@
 /* General Reset */
-body, ul, li {
+body,
+ul,
+li {
   right: 0;
   margin: 0;
   padding: 0;
@@ -15,7 +17,7 @@ header {
 
 /* Header Styles */
 .header {
-  
+
   width: 100%;
   flex-direction: column;
   background-color: #ffffff00;
@@ -52,7 +54,7 @@ header {
   font-weight: bold;
   font-size: 43px;
   color: #e74c3c;
-  
+
 }
 
 
@@ -77,8 +79,7 @@ header {
   color: #fff;
 }
 
-.book-button button {
-}
+.book-button button {}
 
 .book-button:active {
   padding-right: 15%;
@@ -98,9 +99,9 @@ header {
 
 /* Navigation Menu */
 .nav-menu {
-  background-color: #FEFAE0;
+  background-color: #FBFAF1;
   width: 100%;
-  text-align:right;
+  text-align: right;
   padding: 1rem 0;
 }
 
@@ -117,7 +118,7 @@ header {
 }
 
 .nav-menu li:hover {
-  color: #FF6A4D;
+  color: #e26e57;
   cursor: pointer;
   font-weight: bold;
 }
@@ -135,10 +136,11 @@ header {
 
 /* Open Menu Animation */
 .menu-open .header-top {
-  background-color: #FEFAE0;
+  background-color: #FBFAF1;
   transition: transform 0.3s ease;
   margin: auto;
 }
+
 .lang-book {
   display: flex;
   justify-items: space-between;
@@ -146,6 +148,7 @@ header {
   width: 20%;
   margin-right: 10%;
 }
+
 /* Custom Dropdown Container */
 .custom-dropdown {
   position: relative;
@@ -194,4 +197,24 @@ header {
 .custom-dropdown .dropdown-item.selected {
   font-weight: bold;
   color: red;
+}
+
+@media (max-width: 768px) {
+  .header .book-button {
+    display: none;
+    margin: auto;
+  }
+  .menu-button {
+    margin: auto;
+  }
+ .menu-button h2 {
+  font-size: 32px;
+ }
+
+ .menu-button:hover h2 {
+  font-weight: bold;
+  font-size: 33px;
+  color: #e74c3c;
+
+}
 }

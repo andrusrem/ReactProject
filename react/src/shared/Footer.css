@@ -15,7 +15,7 @@
 
 /* Sticky Footer */
 .footer.sticky {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -23,14 +23,15 @@
 }
 
 .social-icon {
-    font-size: 34px;
+    margin-top: 10%;
+    font-size: 22px;
 }
 
 .social-icon:hover {
-    font-size: 38px;
+    font-size: 28px;
 }
 
-.social-icon:active{
+.social-icon:active {
     font-size: 35px;
 }
 
@@ -41,12 +42,32 @@
     /* Space between sections */
     align-items: flex-start;
     flex-wrap: wrap;
+    margin: auto;
     /* Wrap content for smaller devices */
     color: #c7c7b8;
 }
 
+.navigation-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contact {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.social-media {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /* Sections Styling */
 .footer-section {
+    width: auto;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
     /* Space between sections */
     flex: 1;
@@ -54,15 +75,12 @@
     min-width: 200px;
     /* Prevent sections from becoming too narrow */
 }
-.footer-section .navigation {
-    display: flex;
-    align-items: flex-start;
-}
+
 .footer h3 {
     font-size: 22px;
     font-family: "Montserrat", serif;
     font-weight: normal;
-    margin-bottom: 10px;
+    margin-bottom: auto;
     color: #ffffff;
     letter-spacing: 1.5px;
 }
@@ -74,6 +92,15 @@
 }
 
 .footer p strong {
+    font-family: "Montserrat", serif;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+
+}
+
+.footer p {
     font-family: "Montserrat", serif;
     letter-spacing: 1.5px;
     font-size: 18px;
@@ -98,18 +125,22 @@
     color: #ff7058;
 }
 
-.navigation {
-    width: auto;
-    margin-left: 15%;
-}
+
 
 .footer .book-button {
     background: none;
     border: 2px solid #ff7058;
     color: #ff7058;
+    width: 100%;
+    height: auto;
     padding: 10px 20px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.book {
+    margin: auto;
+    width: 10%;
 }
 
 .footer .book-button:hover {
@@ -132,6 +163,18 @@
     .footer {
         padding: 20px 30px;
     }
+    .footer.sticky {
+        position: absolute;
+        bottom: 100px;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .book {
+        width: 100%;
+        height: 100%;
+    }
 
     .footer-container {
         flex-direction: column;
@@ -142,16 +185,14 @@
 
     .footer-section {
         text-align: center;
+        flex-direction: column;
         /* Center text for smaller screens */
         margin-bottom: 15px;
+        margin-left: 0;
     }
 
     .footer .book-button {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-    .navigation{
-        margin-left: 0;
+        display: none;
     }
 }
 
@@ -171,13 +212,25 @@
         margin-bottom: 10px;
     }
 
+    .book {
+        width: 100%;
+        height: 100%;
+    }
+
     .footer h3 {
-        font-size: 1rem;
+        font-size: 22px;
+        font-family: "Montserrat", serif;
+        font-weight: normal;
+        margin-bottom: auto;
+        color: #ffffff;
+        letter-spacing: 1.5px;
     }
 
     .footer .book-button {
         padding: 6px 10px;
         font-size: 0.8rem;
+        margin: auto;
+        display: none;
     }
 
     .footer-bottom {

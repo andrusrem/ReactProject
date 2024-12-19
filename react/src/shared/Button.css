@@ -1,0 +1,39 @@
+@media (min-width: 769px){
+    .small-screen-button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .small-screen-button-container{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        height: 100px;
+    }
+    .small-screen-button {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%; /* Full width */
+        height: 100px; /* Set height for the button */
+        background-color: #FF7058; /* Button background color */
+        color: white; /* Button text color */
+        font-size: 18px; /* Adjust font size */
+        font-weight: bold; /* Make text bold */
+        text-align: center; /* Center text */
+        line-height: 50px; /* Vertically center text */
+        border: none; /* Remove border */
+        
+        z-index: 1000; /* Ensure it stays above other content */
+        cursor: pointer; /* Add a pointer cursor */
+        border-radius: 0;
+        
+        
+
+    }
+
+    .small-screen-button:hover {
+        background-color: #ff4a2e;
+    }
+}

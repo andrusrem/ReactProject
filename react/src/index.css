@@ -5,7 +5,7 @@
   font-weight: 400;
 
   color: #333;
-  background-color: #ffffff;
+  background-color: #FBFAF1;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,7 +17,7 @@
   /* Orange for buttons and accents */
   --secondary-color: #333;
   /* Dark text */
-  --background-light: #fefaef;
+  --background-light: #FBFAF1;
   /* Light yellow for navigation menu */
   --hover-color: #ff4c2b;
   /* Darker hover for buttons */

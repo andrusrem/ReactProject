@@ -1,20 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Header from "./shared/Header.jsx"
-import Footer from "./shared/Footer.jsx"
-import Head from "./shared/Head.jsx"
+import "./index.css"
+import Header from "./shared/Header"
+import Footer from "./shared/Footer"
+import Head from "./shared/Head"
+import Button from './shared/Button'
+import { LanguageProvider } from './LanguageContext'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <LanguageProvider >
         <Head></Head>
         <Header></Header>
-
         <Footer></Footer>
+        <Button></Button>
+      </LanguageProvider>
     </>
   )
 }

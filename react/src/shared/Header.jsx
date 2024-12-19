@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./Header.css"; // Import the CSS file for styling
+import "./Header.css";
 import "./Logo.css";
+import { useLanguage } from "../LanguageContext"; // Import useLanguage from LanguageContext
 
 // Translation for header content
 const translations = {
@@ -34,8 +35,8 @@ const translations = {
 };
 
 const Header = () => {
+  const { language, changeLanguage } = useLanguage(); // Use language from context
   const [menuOpen, setMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("en");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -47,8 +48,8 @@ const Header = () => {
   };
 
   const handleLanguageChange = (lang) => {
-    setLanguage(lang);
-    setDropdownOpen(false);
+    changeLanguage(lang); // Change language in context
+    setDropdownOpen(false); // Close the dropdown after selecting a language
   };
 
   const languages = [
@@ -88,9 +89,7 @@ const Header = () => {
                   <li
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className={`dropdown-item ${
-                      lang.code === language ? "selected" : ""
-                    }`}
+                    className={`dropdown-item ${lang.code === language ? "selected" : ""}`}
                   >
                     {lang.name}
                   </li>
