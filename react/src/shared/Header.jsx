@@ -62,14 +62,14 @@ const Header = () => {
     <header className={`header ${menuOpen ? "menu-open" : ""}`}>
       <div className="header-top">
         {/* Menu Button */}
-        <button className="menu-button" onClick={toggleMenu}>
+        <button className="menu-button" onClick={toggleMenu} aria-label={menuOpen ? "Close menu" : "Open menu"}>
           <h2>{menuOpen ? "✕" : translations[language].menu}</h2>
         </button>
 
         {/* Logo */}
         <div className="logo-container">
           <div className="circle"></div>
-          <div className="letter">A<sup>2</sup></div>
+          <div className="letter"><p>A<sup>2</sup></p></div>
         </div>
 
         {/* Language and Book */}
