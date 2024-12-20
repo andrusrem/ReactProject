@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Header.css";
 import "./Logo.css";
 import { useLanguage } from "../LanguageContext"; // Import useLanguage from LanguageContext
+import { Link } from "react-router-dom";
 
 // Translation for header content
 const translations = {
@@ -110,10 +111,10 @@ const Header = () => {
         <nav className="nav-menu">
           <div className="nav-menu-div">
             <ul>
-              <li><p>{translations[language].home}</p></li>
-              <li><p>{translations[language].activities}</p></li>
-              <li><p>{translations[language].accommodation}</p></li>
-              <li><p>{translations[language].contact}</p></li>
+              <li><Link to="/">{translations[language].home}</Link></li>
+              <li><Link to="/activities">{translations[language].activities}</Link></li>
+              <li><Link to="/accommodation">{translations[language].accommodation}</Link></li>
+              <li><Link to="/contact">{translations[language].contact}</Link></li>
             </ul>
           </div>
         </nav>
