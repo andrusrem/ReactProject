@@ -23,6 +23,7 @@ namespace reactApi
                 connectionString,
                 mySqlOptions => mySqlOptions.EnableRetryOnFailure()
             ));
+            builder.Services.AddTransient<TestSeeder>();
             Console.WriteLine(connectionString);
             // Add services to the container.
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -46,6 +47,12 @@ namespace reactApi
             app.UseAuthorization();
 
             app.MapControllers();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var seeder = scope.ServiceProvider.GetRequiredService<TestSeeder>();
+                seeder.Seed();
+            }
 
             app.Run();
 
