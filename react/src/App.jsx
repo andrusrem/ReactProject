@@ -8,6 +8,8 @@ import Header from './shared/Header.jsx';
 import Footer from './shared/Footer'
 import Button from './shared/Button'
 import { LanguageProvider } from './LanguageContext.jsx';
+import Accommodations from './Accommodations/index.jsx';
+import Contact from './Contact/index.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +21,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/activities' element={<Activities />} />
+          <Route path='/accommodations' element={<Accommodations />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
         <Footer></Footer>
         <Button></Button>

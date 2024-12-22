@@ -2,6 +2,7 @@ import React from "react";
 import { useLanguage } from "../LanguageContext"; // Import the useLanguage hook
 import "./Footer.css";
 import "./Logo.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { language } = useLanguage(); // Get the current language from context
@@ -12,6 +13,7 @@ const Footer = () => {
       navigation: "Navigation",
       home: "Home",
       activities: "Activities",
+      accommodation: "Accommodation",
       privacyPolicy: "Privacy Policy",
       contact: "Contact",
       company: "Fortuzen OÜ",
@@ -25,6 +27,7 @@ const Footer = () => {
       navigation: "Navigeerimine",
       home: "Kodu",
       activities: "Tegevused",
+      accommodation: "Majutus",
       privacyPolicy: "Privaatsuspoliitika",
       contact: "Kontakt",
       company: "Fortuzen OÜ",
@@ -38,6 +41,7 @@ const Footer = () => {
       navigation: "Навигация",
       home: "Главная",
       activities: "Деятельности",
+      accommodation: "Размещение",
       privacyPolicy: "Политика конфиденциальности",
       contact: "Контакт",
       company: "Fortuzen OÜ",
@@ -51,6 +55,7 @@ const Footer = () => {
       navigation: "Navigointi",
       home: "Etusivu",
       activities: "Aktiviteetit",
+      accommodation: "Majoitus",
       privacyPolicy: "Tietosuojakäytäntö",
       contact: "Yhteystiedot",
       company: "Fortuzen OÜ",
@@ -74,9 +79,11 @@ const Footer = () => {
           <div className="navigation-container">
             <h3>{content[language].navigation}</h3>
             <ul>
-              <li><a href="/">{content[language].home}</a></li>
-              <li><a href="/activities">{content[language].activities}</a></li>
-              <li><a href="/privacy-policy">{content[language].privacyPolicy}</a></li>
+              <li><Link to="/">{content[language].home}</Link></li>
+              <li><Link to="/activities">{content[language].activities}</Link></li>
+              <li><Link to="/accommodations">{content[language].accommodation}</Link></li>
+              <li><Link to="/contact">{content[language].contact}</Link></li>
+              <li><Link to="/privacy-policy">{content[language].privacyPolicy}</Link></li>
             </ul>
           </div>
 
