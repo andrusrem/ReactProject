@@ -46,7 +46,20 @@ const Footer = () => {
       instagram: "Instagram",
       bookButton: "Забронировать",
       copyright: "Авторские права 2024 - Сделано andrusrem"
-    }
+    },
+    fin: {
+      navigation: "Navigointi",
+      home: "Etusivu",
+      activities: "Aktiviteetit",
+      privacyPolicy: "Tietosuojakäytäntö",
+      contact: "Yhteystiedot",
+      company: "Fortuzen OÜ",
+      email: "fortuzenou@gmail.com",
+      socialMedia: "Sosiaalinen media",
+      instagram: "Instagram",
+      bookButton: "Varaa",
+      copyright: "Tekijänoikeus 2024 - Tehnyt andrusrem"
+  },
   };
 
   return (

@@ -33,6 +33,15 @@ const translations = {
     book: "Забронировать",
     language: "RU",
   },
+  fin: {
+    menu: "VALIKKO",
+    home: "Etusivu",
+    activities: "Aktiviteetit",
+    accommodation: "Majoitus",
+    contact: "Yhteystiedot",
+    book: "Varaa",
+    language: "FIN",
+},
 };
 
 const Header = () => {
@@ -57,6 +66,7 @@ const Header = () => {
     { code: "en", name: "English" },
     { code: "et", name: "Eesti" },
     { code: "ru", name: "Русский" },
+    { code: "fin", name: "Suomi" },
   ];
 
   return (
