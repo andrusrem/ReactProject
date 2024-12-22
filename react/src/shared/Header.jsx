@@ -39,7 +39,7 @@ const Header = () => {
   const { language, changeLanguage } = useLanguage(); // Use language from context
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+  
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
