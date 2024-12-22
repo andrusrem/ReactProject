@@ -13,7 +13,7 @@ const translations = {
       book: "Broneeri",
     },
     ru: {
-      book: "Забронировать",
+      book: "Бронь",
     },
     fin: {
       book: "Varaa",

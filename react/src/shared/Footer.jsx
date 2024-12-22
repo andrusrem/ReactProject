@@ -48,7 +48,7 @@ const Footer = () => {
       email: "fortuzenou@gmail.com",
       socialMedia: "Социальные сети",
       instagram: "Instagram",
-      bookButton: "Забронировать",
+      bookButton: "Бронь",
       copyright: "Авторские права 2024 - Сделано andrusrem"
     },
     fin: {

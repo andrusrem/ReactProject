@@ -30,7 +30,7 @@ const translations = {
     activities: "Досуг",
     accommodation: "Размещение",
     contact: "Контакт",
-    book: "Забронировать",
+    book: "Бронь",
     language: "RU",
   },
   fin: {

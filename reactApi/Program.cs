@@ -27,6 +27,15 @@ namespace reactApi
             Console.WriteLine(connectionString);
             // Add services to the container.
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowMyFrontend", policy =>
+                {
+                    policy.WithOrigins("http://localhost:5173")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
             builder.Services.AddControllers();
 
             builder.Services.AddEndpointsApiExplorer();
@@ -43,6 +52,7 @@ namespace reactApi
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowMyFrontend");
 
             app.UseAuthorization();
 
