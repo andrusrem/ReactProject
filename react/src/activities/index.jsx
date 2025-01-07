@@ -4,11 +4,12 @@ import "../index.css";
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useLanguage } from "../LanguageContext";
-
+import { GetActivities } from '../controllers/ActivityController';
 
 // Fetch Activities
 const fetchActivities = async () => {
-  const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/Activities`);
+  const url = `${import.meta.env.VITE_API_URL}/Activities`;
+  const data  = await GetActivities(url);
   return data;
 };
 
