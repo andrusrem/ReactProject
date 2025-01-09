@@ -1,46 +1,33 @@
-<svg
-  width="100" height="100" xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 100 100"
->
-  <!-- Circle -->
-  <circle
-    cx="50" cy="50" r="40"
-    stroke="#FF7058" fill="none" stroke-width="4"
-  >
-    <!-- Circle animation -->
-    <animate
-      attributeName="r" from="40" to="50"
-      dur="1s" repeatCount="indefinite" fill="freeze"
-    />
-    <animate
-      attributeName="stroke-width" from="4" to="8"
-      dur="1s" repeatCount="indefinite" fill="freeze"
-    />
-  </circle>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.46 283.46">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #1d1d1b;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
 
-  <!-- Letter "A" -->
-  <text
-    x="50" y="66" text-anchor="middle"
-    font-size="42" font-family="Arial" font-weight="bold" fill="#000000"
-  >
-    A
-    <!-- Animation for "A" font size -->
-    <animate
-      attributeName="font-size" from="42" to="56"
-      dur="1s" repeatCount="indefinite" fill="freeze"
-    />
-  </text>
+      .cls-2 {
+        fill: #e30613;
+      }
 
-  <!-- Superscript "2" -->
-  <text
-    x="60" y="48"
-    font-size="16" font-family="Arial" fill="#000000"
-  >
-    ²
-    <!-- Animation for superscript "2" font size -->
-    <animate
-      attributeName="font-size" from="30" to="35"
-      dur="1s" repeatCount="indefinite" fill="freeze"
-    />
-  </text>
+      .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #1d1d1b;
+      }
+    </style>
+  </defs>
+  <g>
+    <polyline class="cls-3" points="108.69 172.09 148.95 172.09 153.11 181.3 105.12 181.4 108.69 172.09"/>
+    <polyline class="cls-3" points="184.74 210.83 171.87 210.83 145.17 128.24 148.82 117.58 152.92 117.58 184.74 210.83"/>
+    <polyline class="cls-3" points="138.39 117.58 106.71 210.83 119.16 210.83 148.82 117.58 138.39 117.58"/>
+    <polyline class="cls-3" points="138.39 117.58 106.71 210.83 119.16 210.83 148.82 117.58 138.39 117.58"/>
+    <path class="cls-2" d="m163.66,129.44v-2.49l3.18-3.09c7.64-7.27,11.1-11.14,11.14-15.65,0-3.04-1.47-5.85-5.94-5.85-2.72,0-4.97,1.38-6.35,2.53l-1.29-2.85c2.07-1.75,5.02-3.04,8.47-3.04,6.44,0,9.16,4.42,9.16,8.7,0,5.52-4.01,9.99-10.31,16.07l-2.39,2.21v.09h13.44v3.36h-19.11Z"/>
+  </g>
+  <polyline class="cls-1" points="145.38 260.38 245 260.38 245 111.88 145.73 13.85 48.01 111.44 47.44 210.83"/>
 </svg>

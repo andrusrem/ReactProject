@@ -14,16 +14,23 @@ const fetchActivities = async () => {
 };
 
 const ActivityList = () => {
-    const { data, error, isLoading } = useQuery({
-        queryKey: ['Activities'],
-        queryFn: fetchActivities,
-      });
+  // React Query to fetch data
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["Activities"],
+    queryFn: fetchActivities,
+  });
+
+  // Access language from context
   const { language } = useLanguage();
 
+  // State for pagination
+  const [currentPage, setCurrentPage] = React.useState(1);
+
+  // Ensure hooks are called unconditionally
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error fetching data</div>;
 
-  // Create translations
+  // Create translations after hooks
   const translations = data.map((activity) => ({
     en: {
       id: activity.id,
@@ -47,22 +54,78 @@ const ActivityList = () => {
     },
   }));
 
+  // Pagination logic
+  const itemsPerPage = 4;
+  const totalPages = Math.ceil(translations.length / itemsPerPage);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedTranslations = translations.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
+
+  const handleNext = () => {
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  };
+
+  const handlePrevious = () => {
+    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+  };
+
+  // Render the paginated translations
   return (
-    <ul>
-      {translations.map((activity) => (
-        <li key={activity[language].id}>
-          <h3>{activity[language].title}</h3>
-          <p>{activity[language].body}</p>
-        </li>
-      ))}
-    </ul>
+    <div className=''>
+      <ul className="grid gap-4 grid grid-flow-col lg:justify-stretch lg:content-stretch">
+        {paginatedTranslations.map((activity) => (
+          <li key={activity[language].id} className="card glass w-96">
+            <figure>
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                alt="Activity illustration"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{activity[language].title}</h2>
+              <p>{activity[language].body}</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Show</button>
+                <button className="btn btn-primary">Edit</button>
+                <button className="btn hover:bg-red ">Delete</button>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      {/* Pagination Controls */}
+      <div className="flex justify-center mt-10">
+        <button
+          className="btn btn-p mr-2"
+          onClick={handlePrevious}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <span className="font-bold mx-2">{`Page ${currentPage} of ${totalPages}`}</span>
+        <button
+          className="btn btn-secondary"
+          onClick={handleNext}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
+      </div>
+    </div>
   );
 };
 
+
 const Activities = () => {
   return (
-    <div className='activity-list-container'>
-      <h1>Activities</h1>
+    <div className='grid gap-4 xl:mt-350 place-content-stretch'>
+      <div className='grid place-content-center'>
+        <h1>Activities</h1>
+        </div>
       <ActivityList />
     </div>
   );

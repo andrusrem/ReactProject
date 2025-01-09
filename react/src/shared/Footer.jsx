@@ -69,7 +69,7 @@ const Footer = () => {
 
   return (
     <footer className="footer sticky">
-      <div className="footer-container">
+      <div className="footer-container gap-10 place-content-stretch">
         {/* Navigation Section */}
         <div className="footer-section">
           <div className="logo-container">
