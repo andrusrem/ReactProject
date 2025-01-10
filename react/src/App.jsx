@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css'
 import Home from './Home'
 import Activities from './activities/index.jsx';
+import ShowActivity from "./activities/show.jsx";
 import Head from './shared/Head.jsx';
 import Header from './shared/Header.jsx';
 import Footer from './shared/Footer'
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/activities' element={<Activities />} />
+          <Route path='/activities/show/' element={<ShowActivity />} />
           <Route path='/accommodations' element={<Accommodations />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>

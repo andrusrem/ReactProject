@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import "./index.css";
 import "../index.css";
 import { useQuery } from '@tanstack/react-query';
@@ -9,7 +10,7 @@ import { GetActivities } from '../controllers/ActivityController';
 // Fetch Activities
 const fetchActivities = async () => {
   const url = `${import.meta.env.VITE_API_URL}/Activities`;
-  const data  = await GetActivities(url);
+  const data = await GetActivities(url);
   return data;
 };
 
@@ -71,7 +72,6 @@ const ActivityList = () => {
   const handlePrevious = () => {
     if (currentPage > 1) setCurrentPage((prev) => prev - 1);
   };
-
   // Render the paginated translations
   return (
     <div className=''>
@@ -88,7 +88,15 @@ const ActivityList = () => {
               <h2 className="card-title">{activity[language].title}</h2>
               <p>{activity[language].body}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Show</button>
+                <Link
+                  to={{
+                    pathname: '/activities/show/',
+                    search: `?id=${activity[language].id}`,
+                  }}
+                  className="btn btn-primary"
+                >
+                  Show
+                </Link>
                 <button className="btn btn-primary">Edit</button>
                 <button className="btn hover:bg-red ">Delete</button>
               </div>
@@ -122,10 +130,10 @@ const ActivityList = () => {
 
 const Activities = () => {
   return (
-    <div className='grid gap-4 xl:mt-350 place-content-stretch'>
+    <div className='grid gap-4 xl:mt-10% place-content-stretch'>
       <div className='grid place-content-center'>
         <h1>Activities</h1>
-        </div>
+      </div>
       <ActivityList />
     </div>
   );
