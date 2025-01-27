@@ -56,7 +56,7 @@ const ActivityList = () => {
   }));
 
   // Pagination logic
-  const itemsPerPage = 4;
+  const itemsPerPage = 6;
   const totalPages = Math.ceil(translations.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -75,33 +75,36 @@ const ActivityList = () => {
   // Render the paginated translations
   return (
     <div className='mt-0'>
-      <ul className="grid gap-4 grid grid-flow-col w-a lg:justify-stretch lg:content-stretch">
+      <ul className="gap-4 grid grid-cols-3 grid-rows-2 lg:justify-stretch lg:content-stretch">
         {paginatedTranslations.map((activity) => (
-          <li key={activity[language].id} className="card glass ml-2 mr-2">
-            <figure>
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Activity illustration"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{activity[language].title}</h2>
-              <p>{activity[language].body}</p>
-              <div className="card-actions justify-end">
-                <Link
-                  to={{
-                    pathname: '/activities/show/',
-                    search: `?id=${activity[language].id}`,
-                  }}
-                  className="btn btn-primary"
-                >
-                  Show
-                </Link>
-                <button className="btn btn-primary">Edit</button>
-                <button className="btn hover:bg-red ">Delete</button>
+          <div className=''>
+            <li key={activity[language].id} className="card glass ml-2 mr-2">
+              <figure>
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  alt="Activity illustration"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{activity[language].title}</h2>
+                <p>{activity[language].body}</p>
+                <div className="card-actions justify-end">
+                  <Link
+                    to={{
+                      pathname: '/activities/show/',
+                      search: `?id=${activity[language].id}`,
+                    }}
+                    className="btn btn-primary"
+                  >
+                    Show
+                  </Link>
+                  <button className="btn btn-primary">Edit</button>
+                  <button className="btn hover:bg-red ">Delete</button>
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
+          </div>
+
         ))}
       </ul>
 

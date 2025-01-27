@@ -26,7 +26,11 @@ module.exports = {
           '144': '36rem',
           '350': '350px',
           '10%': '10%',
+          '100%': '100%',
           '15%':'15%',
+        },
+        width: {
+          '40%': '40%',
         },
         fontFamily: {
           montserrat: ['"Montserrat"', 'serif'],
