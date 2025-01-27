@@ -74,10 +74,10 @@ const ActivityList = () => {
   };
   // Render the paginated translations
   return (
-    <div className=''>
-      <ul className="grid gap-4 grid grid-flow-col lg:justify-stretch lg:content-stretch">
+    <div className='mt-0'>
+      <ul className="grid gap-4 grid grid-flow-col w-a lg:justify-stretch lg:content-stretch">
         {paginatedTranslations.map((activity) => (
-          <li key={activity[language].id} className="card glass w-96">
+          <li key={activity[language].id} className="card glass ml-2 mr-2">
             <figure>
               <img
                 src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"

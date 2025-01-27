@@ -7,7 +7,7 @@ import Head from './shared/Head'
 
 const Home = () => {
     return (
-        <div>
+        <div className='grid w-96'>
             
         </div>
     )
