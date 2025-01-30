@@ -101,9 +101,7 @@ button:focus-visible {
 
 /* Header Section (Fixed at the top and 100% width) */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   height: 200px;
   width: 100%;
   /* Full width */

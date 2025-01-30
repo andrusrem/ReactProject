@@ -4,6 +4,7 @@ import './App.css'
 import Home from './Home'
 import Activities from './activities/index.jsx';
 import ShowActivity from "./activities/show.jsx";
+import CreateActivity from './activities/create.jsx';
 import Head from './shared/Head.jsx';
 import Header from './shared/Header.jsx';
 import Footer from './shared/Footer'
@@ -23,6 +24,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/activities' element={<Activities />} />
           <Route path='/activities/show/' element={<ShowActivity />} />
+          <Route path='/activities/create' element={<CreateActivity />} />
           <Route path='/accommodations' element={<Accommodations />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>

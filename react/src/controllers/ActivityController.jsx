@@ -17,7 +17,7 @@ export async function GetActivityById(id, url)
     return data;
 }
 
-export async function CreateActivity(url, body)
+export async function CreateNewActivity(url, body)
 {
     if(body == null)
     {

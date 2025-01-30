@@ -133,9 +133,20 @@ const ActivityList = () => {
 
 const Activities = () => {
   return (
-    <div className='grid gap-4 xl:mt-10% place-content-stretch'>
-      <div className='grid place-content-center'>
-        <h1>Activities</h1>
+    <div className='grid gap-4 place-content-stretch z-10'>
+      <div className='flex grid-rows justify-between'>
+        <div className='place-self-start ml-2'>
+          <h1>Activities</h1>
+        </div>
+        <div className='place-self-end mr-2'>
+          <Link
+            to='/activities/create/'
+            className="btn btn-primary"
+          >
+            Add new activity
+          </Link>
+        </div>
+
       </div>
       <ActivityList />
     </div>

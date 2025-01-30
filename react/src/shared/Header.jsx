@@ -70,21 +70,21 @@ const Header = () => {
   ];
 
   return (
-    <header className={`header ${menuOpen ? "menu-open" : ""}`}>
+    <header className={`header ${menuOpen ? "menu-open pointer-events-auto" : "pointer-events-none"}`}>
       <div className="header-top">
         {/* Menu Button */}
-        <button className="menu-button" onClick={toggleMenu} aria-label={menuOpen ? "Close menu" : "Open menu"}>
+        <button className="menu-button pointer-events-auto" onClick={toggleMenu} aria-label={menuOpen ? "Close menu" : "Open menu"}>
           <h2>{menuOpen ? "✕" : translations[language].menu}</h2>
         </button>
 
         {/* Logo */}
-        <div className="logo-container">
+        <div className="logo-container pointer-events-auto">
           <div className="circle"></div>
           <div className="letter"><p>A<sup>2</sup></p></div>
         </div>
 
         {/* Language and Book */}
-        <div className="lang-book">
+        <div className="lang-book pointer-events-auto">
           {/* Custom Language Switcher */}
           <div className="custom-dropdown">
             <div
@@ -119,7 +119,7 @@ const Header = () => {
       {/* Expanded Menu */}
       {menuOpen && (
         <nav className="nav-menu">
-          <div className="nav-menu-div">
+          <div className="nav-menu-div pointer-events-auto">
             <ul>
               <li><Link to="/">{translations[language].home}</Link></li>
               <li><Link to="/activities">{translations[language].activities}</Link></li>
