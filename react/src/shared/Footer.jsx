@@ -3,6 +3,7 @@ import { useLanguage } from "../LanguageContext"; // Import the useLanguage hook
 import "./Footer.css";
 import "./Logo.css";
 import { Link } from "react-router-dom";
+import logo from './Logo_footer.svg';
 
 const Footer = () => {
   const { language } = useLanguage(); // Get the current language from context
@@ -72,9 +73,8 @@ const Footer = () => {
       <div className="footer-container gap-10 place-content-stretch">
         {/* Navigation Section */}
         <div className="footer-section">
-          <div className="logo-container">
-            <div className="circle"></div>
-            <div className="letter">A<sup>2</sup></div>
+          <div className="logo-container w-20% mb-5 mt-5">
+            <img src={logo} alt="" className="w-50%"/>
           </div>
           <div className="navigation-container">
             <h3>{content[language].navigation}</h3>
@@ -110,7 +110,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="footer-bottom">
+      <div className="footer-bottom justify-self-center">
         <p>&copy; {content[language].copyright}</p>
       </div>
     </footer>

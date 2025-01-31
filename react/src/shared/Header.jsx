@@ -3,6 +3,7 @@ import "./Header.css";
 import "./Logo.css";
 import { useLanguage } from "../LanguageContext"; // Import useLanguage from LanguageContext
 import { Link } from "react-router-dom";
+import logo from './Logo_svg.svg';
 
 // Translation for header content
 const translations = {
@@ -79,8 +80,9 @@ const Header = () => {
 
         {/* Logo */}
         <div className="logo-container pointer-events-auto">
-          <div className="circle"></div>
-          <div className="letter"><p>A<sup>2</sup></p></div>
+          {/* <div className="circle"></div>
+          <div className="letter"><p>A<sup>2</sup></p></div> */}
+          <img src={logo} alt="" className="logo w-20%"/>
         </div>
 
         {/* Language and Book */}
