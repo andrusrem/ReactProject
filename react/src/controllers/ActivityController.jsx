@@ -26,7 +26,7 @@ export async function CreateNewActivity(url, body)
     const request = await axios.post(url, body).catch(function (error) {
         console.log(error);
     });
-    return request;
+    return request.status;
 }
 
 export async function EditActivity(url, body)

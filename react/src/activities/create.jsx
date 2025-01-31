@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { Activity } from '../models/Activity';
 import { CreateNewActivity } from '../controllers/ActivityController';
-import { Link, redirect } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const inputFields = [
     { name: "titleENG", label: "English title", type: "text", placeholder: "Restaurant", span: "title-eng-desc", inputType: 'input' },
@@ -17,32 +17,27 @@ const inputFields = [
 
 
 const CreateActivity = () => {
-    const {handleSubmit} = useForm();
-    const url = `${import.meta.env.VITE_API_URL}/Activity`;
-    const onSubmit = (event) => {
+    const navigate = useNavigate();
+    const url = `${import.meta.env.VITE_API_URL}/Activities`;
+    const onSubmit = async (event) => {
         const data = new FormData(event.target);
         event.preventDefault();
         const activity = {
-        titleENG: data.get('titleENG'),
-        titleEST: data.get('titleEST'),
-        titleRUS: data.get('titleRUS'),
-        titleFIN: data.get('titleFIN'),
-        bodyENG: data.get('bodyENG'),
-        bodyEST: data.get('bodyEST'),
-        bodyRUS: data.get('bodyRUS'),
-        bodyFIN: data.get('bodyFIN'),
+            titleENG: data.get('titleENG'),
+            titleEST: data.get('titleEST'),
+            titleRUS: data.get('titleRUS'),
+            titleFIN: data.get('titleFIN'),
+            bodyENG: data.get('bodyENG'),
+            bodyEST: data.get('bodyEST'),
+            bodyRUS: data.get('bodyRUS'),
+            bodyFIN: data.get('bodyFIN'),
         }
-        handleSubmit(activity);
-        useEffect(() => {
-            if(activity)
-            {
-                
+        if (activity != null) {
+            const req = await CreateNewActivity(url, activity)
+            if (req === 201) {
+                navigate("../activities", { replace: true });
             }
-            CreateActivity(url, activity).then((res) => {
-                console.log(res.data);
-            });
-            
-        })
+        }
 
     };
     return <div className='grid w-screen'>
@@ -63,12 +58,12 @@ const CreateActivity = () => {
                                     placeholder={inputField.placeholder}
                                     className='block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6'
                                 /> : <textarea
-                                type={inputField.type}
-                                id={inputField.name}
-                                name={inputField.name}
-                                placeholder={inputField.placeholder}
-                                className='block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6'
-                            />}
+                                    type={inputField.type}
+                                    id={inputField.name}
+                                    name={inputField.name}
+                                    placeholder={inputField.placeholder}
+                                    className='block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6'
+                                />}
                             </div>
                         </div>
                     ))}
