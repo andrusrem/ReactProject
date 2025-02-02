@@ -99,7 +99,12 @@ const ActivityList = () => {
                     Show
                   </Link>
                   <button className="btn btn-primary">Edit</button>
-                  <button className="btn hover:bg-red ">Delete</button>
+                  <Link 
+                    to={{
+                      pathname: '/activities/delete/',
+                      search: `?id=${activity[language].id}`,
+                    }}
+                    className="btn hover:border-red hover:border-2 ">Delete</Link>
                 </div>
               </div>
             </li>

@@ -29,7 +29,7 @@ export async function CreateNewActivity(url, body)
     return request.status;
 }
 
-export async function EditActivity(url, body)
+export async function Edit(url, body)
 {
     if(body == null)
     {
@@ -41,7 +41,7 @@ export async function EditActivity(url, body)
     return request;
 }
 
-export async function DeleteActivity(url, id)
+export async function Delete(url, id)
 {
     if(id == null)
     {
@@ -50,5 +50,5 @@ export async function DeleteActivity(url, id)
     const request = await axios.delete(url, id).catch(function (error) {
         console.log(error);
     });
-    return request
+    return request.status
 }
