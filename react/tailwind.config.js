@@ -40,6 +40,10 @@ module.exports = {
           '70%': '70%',
           '80%': '80%',
         },
+        margin: {
+          '0': '0',
+          
+        },
         fontFamily: {
           montserrat: ['"Montserrat"', 'serif'],
         },

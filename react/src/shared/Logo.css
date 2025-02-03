@@ -2,31 +2,12 @@
 .logo-container {
     display: flex;
     
-    align-items: center;
-    justify-content:center;
-    width: 20%;
     height: 120px;
     position: relative;
     cursor: pointer; /* Add pointer cursor on hover */
     transition: transform 0.3s ease-in-out; /* Smooth transition */
   }
 
-  .footer .logo-container{
-    width: auto;
-    justify-content:center;
-    align-items: center;
-  }
-  
-  /* Animated Circle */
-  .circle {
-    width: 60px;
-    height: 60px;
-    border: 2px solid #e74c3c; /* Red stroke */
-    border-radius: 50%;
-    margin-bottom: 5px;
-    transition: all 0.3s ease-in-out; /* Smooth transition for scale and border */
-  }
-  
   /* Logo Letter A² */
   .letter {
     font-family: "Playfair Display", serif;
@@ -39,28 +20,5 @@
 
   .footer .letter {
     color: #FFFFFF;
-  }
-  
-  /* Hover Effect for Logo Container */
-  .logo-container:hover .circle {
-    transform: scale(1.2);  /* Scale up the circle */
-    width: 10px;
-    height: 10px;
-    border-width: 12px;  /* Increase border width */
-    opacity: 1;  /* Ensure the circle is fully visible */
-  }
-  
-  /* Hover Effect for Logo Letter */
-  .logo-container:hover .letter {
-    transform: scale(1.2);
-    font-size: 2.5rem;
-    opacity: 1; /* Make the letter A² appear */
-    transform: translateX(0); /* Move the letter to its original position */
-  }
-  
-  /* Animation for Initial State */
-  .logo-container .letter {
-    opacity: 0;  /* Hide letter initially */
-    transform: translateX(-20px); /* Slightly move the letter upwards */
   }
   

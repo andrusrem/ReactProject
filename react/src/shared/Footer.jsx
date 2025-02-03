@@ -4,6 +4,7 @@ import "./Footer.css";
 import "./Logo.css";
 import { Link } from "react-router-dom";
 import logo from './Logo_footer.svg';
+import Home from "../Home";
 
 const Footer = () => {
   const { language } = useLanguage(); // Get the current language from context
@@ -70,14 +71,14 @@ const Footer = () => {
 
   return (
     <footer className="footer mt-5">
-      <div className="footer-container gap-10 place-content-stretch">
+      <div className="footer-container">
         {/* Navigation Section */}
-        <div className="footer-section">
-          <div className="logo-container w-20% mb-5 mt-5">
-            <img src={logo} alt="" className="w-50%"/>
+        <div className="grid footer-section gap-2 place-content-stretch">
+          <div className="logo-container w-auto mb-5 mt-5 mr-0 ml-0 justify-center">
+            <Link to='/' element={<Home/>} className="w-50%"><img src={logo} alt="" className="w-full"/></Link>
           </div>
           <div className="navigation-container">
-            <h3>{content[language].navigation}</h3>
+            <div className="mb-2"><h3>{content[language].navigation}</h3></div>
             <ul>
               <li><Link to="/">{content[language].home}</Link></li>
               <li><Link to="/activities">{content[language].activities}</Link></li>
@@ -89,22 +90,23 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div className="contact">
-            <h3>{content[language].contact}</h3>
-            <p><strong>{content[language].company}</strong></p>
+            <div className="mb-2"><h3>{content[language].contact}</h3></div>
+            <p className="mb-2"><strong>{content[language].company}</strong></p>
             <a href={`mailto:${content[language].email}`}>{content[language].email}</a>
           </div>
 
           {/* Social Media Section */}
           <div className="social-media">
-            <h3>{content[language].socialMedia}</h3>
+            <div className="mb-2"><h3>{content[language].socialMedia}</h3></div>
+            
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <h3 className="social-icon">📷 {content[language].instagram}</h3>
+              <h3 className="hover:text-red">📷 {content[language].instagram}</h3>
             </a>
           </div>
 
           {/* Book Button */}
           <div className="book">
-            <button className="book-button">{content[language].bookButton}</button>
+            <button className="book-button w-full">{content[language].bookButton}</button>
           </div>
         </div>
       </div>

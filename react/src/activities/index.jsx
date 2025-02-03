@@ -56,7 +56,7 @@ const ActivityList = () => {
   }));
 
   // Pagination logic
-  const itemsPerPage = 6;
+  const itemsPerPage = 4;
   const totalPages = Math.ceil(translations.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -75,7 +75,7 @@ const ActivityList = () => {
   // Render the paginated translations
   return (
     <div className='mt-0'>
-      <ul className="gap-4 grid grid-cols-3 grid-rows-2 lg:justify-stretch lg:content-stretch">
+      <ul className="gap-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-1 lg:justify-stretch lg:content-stretch">
         {paginatedTranslations.map((activity) => (
           <div className=''>
             <li key={activity[language].id} className="card glass ml-2 mr-2">
@@ -112,9 +112,7 @@ const ActivityList = () => {
 
         ))}
       </ul>
-
-      {/* Pagination Controls */}
-      <div className="flex justify-center mt-10">
+      {totalPages > 1 ? <div className="flex justify-center mt-10">
         <button
           className="btn btn-p mr-2"
           onClick={handlePrevious}
@@ -130,7 +128,8 @@ const ActivityList = () => {
         >
           Next
         </button>
-      </div>
+      </div> : <span hidden> only one page</span>}
+      
     </div>
   );
 };
