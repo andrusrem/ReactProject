@@ -35,7 +35,7 @@ export async function Edit(url, body)
     {
         console.error("Error:Nullable body error");
     }
-    const request = await axios.edit(url, body).catch(function (error) {
+    const request = await axios.put(url, body).catch(function (error) {
         console.log(error);
     });
     return request;

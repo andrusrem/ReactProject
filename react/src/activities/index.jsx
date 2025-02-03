@@ -98,7 +98,12 @@ const ActivityList = () => {
                   >
                     Show
                   </Link>
-                  <button className="btn btn-primary">Edit</button>
+                  <Link 
+                    to={{
+                      pathname: '/activities/edit/',
+                      search: `?id=${activity[language].id}`,
+                    }}
+                    className="btn hover:border-orange hover:border-2 ">Edit</Link>
                   <Link 
                     to={{
                       pathname: '/activities/delete/',

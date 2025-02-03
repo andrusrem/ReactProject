@@ -63,11 +63,8 @@ const DeleteActivity = () => {
         if(url != null)
         {
            const req = await Delete(url ,activity[language].id);
-           
             navigate("../activities", { replace: true });
-            
         }
-
     }
     // Wait for loading or handle errors
     if (isLoading) return <p>Loading...</p>;

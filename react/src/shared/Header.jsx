@@ -80,10 +80,8 @@ const Header = () => {
         </button>
 
         {/* Logo */}
-        <div className="logo-container pointer-events-auto">
-          {/* <div className="circle"></div>
-          <div className="letter"><p>A<sup>2</sup></p></div> */}
-          <Link className="logo w-20%" to='/' element={<Home/>}><img src={logo} alt=""/></Link>
+        <div className="logo-container  pointer-events-auto m-auto md:w-10% xl:w-10% lg:w-10% justify-center">
+          <Link className="w-80%" to='/' element={<Home/>}><img src={logo} alt="" className=""/></Link>
         </div>
 
         {/* Language and Book */}

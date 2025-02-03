@@ -5,6 +5,7 @@ import Home from './Home'
 import Activities from './activities/index.jsx';
 import ShowActivity from "./activities/show.jsx";
 import CreateActivity from './activities/create.jsx';
+import EditActivity from './activities/edit.jsx';
 import DeleteActivity from './activities/delete.jsx';
 import Head from './shared/Head.jsx';
 import Header from './shared/Header.jsx';
@@ -13,6 +14,7 @@ import Button from './shared/Button'
 import { LanguageProvider } from './LanguageContext.jsx';
 import Accommodations from './Accommodations/index.jsx';
 import Contact from './Contact/index.jsx';
+import NotFound from './NotFound.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,9 +28,11 @@ function App() {
           <Route path='/activities' element={<Activities />} />
           <Route path='/activities/show/' element={<ShowActivity />} />
           <Route path='/activities/create' element={<CreateActivity />} />
+          <Route path='/activities/edit/' element={<EditActivity />} />
           <Route path='/activities/delete/' element={<DeleteActivity/>}/>
           <Route path='/accommodations' element={<Accommodations />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/404' element={<NotFound/>}/>
         </Routes>
         <Footer></Footer>
         <Button></Button>

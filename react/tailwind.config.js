@@ -17,7 +17,9 @@ module.exports = {
         'gray': '#8492a6',
         'gray-light': '#d3dce6',
         'red': '#FF7058',
-        'white': '#F9F9F9'
+        'white': '#F9F9F9',
+        'black': 'black'
+
       },
       extend: {
         spacing: {
@@ -42,7 +44,8 @@ module.exports = {
         },
         margin: {
           '0': '0',
-          
+          '20%': '20%',
+
         },
         fontFamily: {
           montserrat: ['"Montserrat"', 'serif'],
