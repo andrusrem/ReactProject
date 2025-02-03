@@ -9,11 +9,18 @@ const DeleteActivity = () => {
     const id = searchParams.get("id");
     const navigate = useNavigate();
 
+    const checkId = (data) => {
+        if (data.id === null || data.id === undefined) {
+            navigate('../404', { replace: true });
+        }
+    }
+
     // Fetch Activity Function
     const fetchActivity = async () => {
         const url = `${import.meta.env.VITE_API_URL}/Activities/${id}`;
         const response = await fetch(url);
         if (!response.ok) {
+            checkId(response.json);
             throw new Error("Failed to fetch activity");
         }
         const data = await response.json();
