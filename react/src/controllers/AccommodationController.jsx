@@ -16,7 +16,7 @@ export async function GetAccommodationById(id, url)
     return data;
 }
 
-export async function CreateAccommodation(url, body)
+export async function CreateNewAccommodation(url, body)
 {
     if(body == null)
     {

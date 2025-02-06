@@ -147,7 +147,7 @@ const Accommodations = () => {
         </div>
         <div className='place-self-end mr-2'>
           <Link
-            to='/acccommodations/create/'
+            to='/accommodations/create'
             className="btn btn-primary"
           >
             Add new accommodation
