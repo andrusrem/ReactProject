@@ -12,7 +12,7 @@ import Header from './shared/Header.jsx';
 import Footer from './shared/Footer'
 import Button from './shared/Button'
 import { LanguageProvider } from './LanguageContext.jsx';
-import Accommodations from './Accommodations/index.jsx';
+import Accommodations from './accommodations/index.jsx';
 import Contact from './Contact/index.jsx';
 import NotFound from './NotFound.jsx';
 

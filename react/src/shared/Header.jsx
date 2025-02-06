@@ -124,7 +124,7 @@ const Header = () => {
             <ul>
               <li><Link to="/">{translations[language].home}</Link></li>
               <li><Link to="/activities">{translations[language].activities}</Link></li>
-              <li><Link to="/accommodation">{translations[language].accommodation}</Link></li>
+              <li><Link to="/accommodations">{translations[language].accommodation}</Link></li>
               <li><Link to="/contact">{translations[language].contact}</Link></li>
             </ul>
           </div>
