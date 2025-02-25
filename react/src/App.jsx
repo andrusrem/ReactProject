@@ -13,6 +13,7 @@ import Footer from './shared/Footer'
 import Button from './shared/Button'
 import Accommodations from './accommodations/index.jsx';
 import CreateAccommodations from './accommodations/create.jsx';
+import EditAccommodations from './accommodations/edit.jsx';
 import Contact from './Contact/index.jsx';
 import NotFound from './NotFound.jsx';
 
@@ -33,6 +34,7 @@ function App() {
           <Route path='/activities/delete/' element={<DeleteActivity/>}/>
           <Route path='/accommodations' element={<Accommodations />} />
           <Route path='/accommodations/create' element={<CreateAccommodations />} />
+          <Route path='/accommodations/edit/' element={<EditAccommodations/>} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/404' element={<NotFound/>}/>
         </Routes>

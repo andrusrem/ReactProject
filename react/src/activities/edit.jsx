@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { useForm } from "react-hook-form";
-import { Activity } from '../models/Activity';
 import { Edit } from '../controllers/ActivityController';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 

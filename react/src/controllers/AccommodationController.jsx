@@ -28,7 +28,7 @@ export async function CreateNewAccommodation(url, body)
     return request;
 }
 
-export async function EditAccommodation(url, body)
+export async function Edit(url, body)
 {
     if(body == null)
     {
@@ -40,7 +40,7 @@ export async function EditAccommodation(url, body)
     return request;
 }
 
-export async function DeleteAccommodation(url, id)
+export async function Delete(url, id)
 {
     if(id == null)
     {
