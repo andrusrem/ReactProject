@@ -17,6 +17,7 @@ import EditAccommodations from './accommodations/edit.jsx';
 import Contact from './Contact/index.jsx';
 import NotFound from './NotFound.jsx';
 import ShowAccommodation from './accommodations/show.jsx';
+import DeleteAccommodation from './accommodations/delete.jsx';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path='/accommodations/create' element={<CreateAccommodations />} />
           <Route path='/accommodations/edit/' element={<EditAccommodations/>} />
           <Route path='/accommodations/show/' element={<ShowAccommodation/>}/>
+          <Route path='/accommodations/delete/' element={<DeleteAccommodation/>}/>
           <Route path='/contact' element={<Contact />} />
           <Route path='/404' element={<NotFound/>}/>
         </Routes>

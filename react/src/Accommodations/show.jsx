@@ -61,7 +61,7 @@ const ShowAccommodation = () => {
 
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
-    if (!data) return <p>No activity found.</p>;
+    if (!data) return <p>No accommodation found.</p>;
 
     const accommodation = getAccommodationByLanguage(data);
 
