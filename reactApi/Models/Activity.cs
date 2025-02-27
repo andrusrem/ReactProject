@@ -30,6 +30,7 @@ namespace reactApi.Models
         [Required]
         [StringLength(248)]
         public string BodyFIN {get; set;}
+        public List<Image>? Images { get; set;} = new List<Image>();
 
         public Activity(string titleENG, string titleEST, string titleRUS, string titleFIN,
             string bodyENG, string bodyEST, string bodyRUS, string bodyFIN)

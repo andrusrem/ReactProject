@@ -11,5 +11,6 @@ namespace reactApi.Models
 
         public DbSet<Accommodation> Accommodations { get; set; }
         public DbSet<Activity> Activities {get; set;}
+        public DbSet<Image> Images  {get; set;}
     }
 }

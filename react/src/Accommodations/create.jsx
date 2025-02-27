@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CreateNewAccommodation } from '../controllers/AccommodationController';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -15,6 +15,7 @@ const inputFields = [
 
 
 const CreateAccommodations = () => {
+    const [files, setFiles] = useState([]);
     const navigate = useNavigate();
     const url = `${import.meta.env.VITE_API_URL}/Accommodations`;
     const onSubmit = async (event) => {
@@ -36,11 +37,53 @@ const CreateAccommodations = () => {
                 navigate("../accommodations", { replace: true });
             }
         }
-
     };
+
+    const handleImageChange = (event) => {
+        const selectedImages = Array.from(event.target.files);
+        setFiles((prevImages) => [...prevImages, ...selectedImages]);
+    }
+
+    const handleRemoveImage = (index) => {
+        setFiles(files.filter((_, i) => i !== index));
+    }
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if (files.length === 0) return;
+
+        const formData = new FormData();
+        files.forEach((file) => formData.append("files", file));
+
+        // try {
+        //     const response = await fetch("YOUR_BACKEND_URL/upload", {
+        //         method: "POST",
+        //         body: formData,
+        //     });
+
+        //     const result = await response.json();
+        //     console.log("Upload success:", result);
+        // } catch (error) {
+        //     console.error("Upload error:", error);
+        // }
+    };
+
     return <div className='grid w-screen'>
         <form className='m-auto w-80%' onSubmit={onSubmit}>
             <div className="border-b border-gray-900/10 pb-12">
+                <form className='w-auto' onSubmit={handleSubmit}>
+                    <input name='image' type="file" multiple onChange={handleImageChange} className="file-input file-input-bordered bg-white file-input-red w-full max-w-xs" />
+                    <ul className='w-auto'>
+                        {files.map((file, index) => (
+                            <li key={index} className='w-auto'>
+                                <span>{file.name} - {Math.round(file.size / 1024)} KB</span>
+                                <button type="button" onClick={() => handleRemoveImage(index)}>
+                                    Remove
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                    <button type="submit">Upload</button>
+                </form>
                 <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     {inputFields.map((inputField) => (
                         <div className='sm:col-span-3'>
